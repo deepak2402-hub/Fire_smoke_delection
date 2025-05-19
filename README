@@ -1,0 +1,57 @@
+# Fire and Smoke Detection with OpenCV
+
+This project is a simple real-time fire and smoke detection system using OpenCV and Python. It uses basic color and image processing techniques to identify potential fire and smoke in video frames from a webcam.
+
+## Features
+
+- **Fire Detection:** Detects fire based on HSV color thresholding (yellow/orange hues).
+- **Smoke Detection:** Detects smoke using grayscale differences and thresholding.
+- **Real-time Processing:** Processes frames from your webcam in real time and displays detection alerts.
+
+## Requirements
+
+- Python 3.x
+- OpenCV (`opencv-python`)
+- NumPy
+
+## Installation
+
+1. Clone this repository or copy the code files.
+2. Install the required Python packages:
+   ```bash
+   pip install opencv-python numpy
+   ```
+
+## Usage
+
+Run the main script:
+
+```bash
+python fire_smoke_detection.py
+```
+
+- A window will open showing your webcam feed.
+- If fire or smoke is detected, alerts will appear on the video.
+- Press `q` to quit.
+
+## How it Works
+
+- **Fire Detection:**  
+  The script converts each frame to HSV color space and applies a mask for colors in the yellow/orange range, which are typical of fire. If enough pixels match, it displays a "Fire Detected!" alert.
+
+- **Smoke Detection:**  
+  The script blurs each gray frame, calculates the difference, and thresholds the result to find areas that might be smoke. If enough pixels match, it displays a "Smoke Detected!" alert.
+
+## Limitations
+
+- This is a simple heuristic approach and may not be reliable for safety-critical applications.
+- It may produce false positives/negatives depending on the environment, lighting, and camera quality.
+- For robust detection, consider using machine learning models or more advanced image processing methods.
+
+## License
+
+This project is released under the MIT License.
+
+## Disclaimer
+
+**This code is for educational and demonstration purposes only and should not be used for real-world safety or security applications.**
